@@ -3,24 +3,21 @@ const Advert = () => {
         <div className="ad-div comm-box">
             <div>
                 <img
-                    src="http://blogimages.jspang.com/flutter_ad2.jpg"
+                    src="http://static.simpledesktops.com/uploads/desktops/2020/06/28/Big_Sur_Simple.png.625x385_q100.png"
                     width="100%"
                 />
             </div>
             <div>
                 <img
-                    src="http://blogimages.jspang.com/Vue_koa_ad1.jpg"
+                    src="http://static.simpledesktops.com/uploads/desktops/2015/03/02/mountains-on-mars.png.625x385_q100.png"
                     width="100%"
                 />
             </div>
             <div>
                 <img
-                    src="http://blogimages.jspang.com/WechatIMG12.jpeg"
+                    src="http://static.simpledesktops.com/uploads/desktops/2012/03/08/shock.png.625x385_q100.png"
                     width="100%"
                 />
-            </div>
-            <div>
-                <img src="https://jspang.com/images/ad_4.jpg" width="100%" />
             </div>
         </div>
     );

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Button, Row, Col, List, Icon } from 'antd';
 import Header from '../components/Header';
 import Author from '../components/Author';
 import Advert from '../components/Advert';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
+import servicePath from '../config/apiUrl';
 
 function Home(list) {
     const [mylist, setMylist] = useState(list.data);
@@ -31,20 +33,29 @@ function Home(list) {
                         dataSource={mylist}
                         renderItem={(item) => (
                             <List.Item>
-                                <div className="list-title">{item.title}</div>
+                                <div className="list-title">
+                                    <Link
+                                        href={{
+                                            pathname: '/detail',
+                                            query: { id: item.id },
+                                        }}
+                                    >
+                                        {item.title}
+                                    </Link>
+                                </div>
                                 <div className="list-icon">
                                     <span>
                                         <Icon type="calendar" /> {item.add_time}
                                     </span>
                                     <span>
-                                        <Icon type="folder" /> 视频教程
+                                        <Icon type="folder" /> {item.type_name}
                                     </span>
                                     <span>
                                         <Icon type="fire" /> {item.view_count}人
                                     </span>
                                 </div>
                                 <div className="list-context">
-                                    {item.content}
+                                    {item.introduce}
                                 </div>
                             </List.Item>
                         )}
@@ -62,8 +73,9 @@ function Home(list) {
 
 Home.getInitialProps = async () => {
     const promise = new Promise((resolve) => {
-        axios('http://127.0.0.1:7001/default/getArtivleList').then((res) => {
-            return res.data;
+        axios(servicePath.getArticleList).then((res) => {
+            console.log('====> 数据获取结果', res.data);
+            resolve(res.data);
         });
     });
 

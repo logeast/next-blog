@@ -7,7 +7,7 @@ const Author = () => {
                 {' '}
                 <Avatar
                     size={100}
-                    src="http://blogimages.jspang.com/blogtouxiang1.jpg"
+                    src="https://portrait.gitee.com/uploads/avatars/user/2682/8047784_logeast_1601777527.png"
                 />
             </div>
             <div className="author-introduction">
