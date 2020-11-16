@@ -21,6 +21,11 @@ function AddArticle(props) {
 
     useEffect(() => {
         getTypeInfo();
+        const tmpId = props.match.params.id;
+        if (tmpId) {
+            setArticleId(tmpId);
+            getArticleById(tmpId);
+        }
     }, []);
 
     marked.setOptions({
@@ -75,7 +80,6 @@ function AddArticle(props) {
         }
         // message.success('检验通过');
 
-        console.log(new Date(showDate.replace('-', '/')).getTime() / 1000);
         const dataProps = {
             type_id: selectedType,
             title: articleTitle,
@@ -97,13 +101,15 @@ function AddArticle(props) {
                 },
             }).then((res) => {
                 setArticleId(res.data.insertId);
-                if (res.data.isSuccess) {
+                console.log('===> res', res.data);
+                if (res.data.isSuceess) {
                     message.success('文章保存成功');
                 } else {
                     message.error('文章保存失败');
                 }
             });
         } else {
+            dataProps.id = articleId;
             axios({
                 method: 'post',
                 url: servicePath.updateArticle,
@@ -113,13 +119,25 @@ function AddArticle(props) {
                     'Access-Control-Allow-Origin': '*',
                 },
             }).then((res) => {
-                if (res.data.isSuccess) {
+                console.log('===> res update', res.data);
+                if (res.data.isSuceess) {
                     message.success('文章保存成功');
                 } else {
                     message.error('文章保存失败');
                 }
             });
         }
+    };
+
+    const getArticleById = (id) => {
+        axios(`${servicePath.getArticleById}/${id}`, {
+            withCredentials: true,
+            header: {
+                'Access-Control-Allow-Origin': '*',
+            },
+        }).then((res) => {
+            console.log('res.data', res.data);
+        });
     };
 
     return (

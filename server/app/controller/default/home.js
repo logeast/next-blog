@@ -2,32 +2,57 @@
 
 const Controller = require('egg').Controller;
 
+/**
+ * @controller Default 展示页接口
+ */
 class HomeController extends Controller {
     async index() {
         const { ctx, app } = this;
-        console.log('---->', 'mysql', app.mysql);
         const result = await app.mysql.get('article', {});
-        console.log(result);
         ctx.body = result;
-        // ctx.body = 'xx';
     }
 
-    async list() {
-        const { ctx } = this;
-        ctx.body = 'lists';
-    }
-
+    /**
+     * @summary 获取列表
+     * @description 获取文章列表
+     * @router get /default/getArticleList
+     */
     async getArticleList() {
-        let sql = `
+        const sql = `
             SELECT article.id as id,
             article.title as title,
             article.content as content,
             article.introduce as introduce,
             article.add_time as add_time,
-            article.view_count as view_count
+            article.view_count as view_count,
+            type.name as type_name
             FROM article LEFT JOIN type ON article.type_id = type.id;
         `;
-        // .type.type_name as type_name // 如何查询 LEFT JOIN 的表
+
+        const results = await this.app.mysql.query(sql);
+
+        this.ctx.body = {
+            data: results,
+        };
+    }
+
+    /**
+     * 通过 ID 获取文章列表
+     * @return {object} xx
+     */
+    async getArticleById() {
+        const id = this.ctx.params.id;
+
+        const sql = `
+            SELECT article.title as title,
+            article.content as content,
+            article.introduce as introduce,
+            article.add_time as add_time,
+            article.view_count as view_count,
+            type.name as type_name
+            FROM article LEFT JOIN type ON article.type_id = type.id
+            WHERE article.id=${id};
+        `;
 
         const results = await this.app.mysql.query(sql);
 

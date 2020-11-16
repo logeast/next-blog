@@ -10,5 +10,8 @@ module.exports = (app) => {
         '/default/getArticleList',
         controller.default.home.getArticleList,
     );
-    router.get('/list', controller.default.home.list);
+    router.get(
+        '/default/getArticleById/:id',
+        controller.default.home.getArticleById,
+    );
 };
