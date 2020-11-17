@@ -104,7 +104,6 @@ Detail.getInitialProps = async (content) => {
     const id = content.query.id;
     const promise = new Promise((resolve) => {
         axios(`${servicePath.getArticleById}${id}`).then((res) => {
-            console.log('====> 数据获取结果', res.data);
             resolve(res.data.data[0]);
         });
     });

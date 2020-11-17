@@ -11,7 +11,7 @@ const Author = () => {
                 />
             </div>
             <div className="author-introduction">
-                光头程序员，专注于WEB和移动前端开发。要录1000集免费前端视频的傻X。此地维权无门，此时无能为力，此心随波逐流。
+                夜月楼台，秋香院宇。笑盈盈地人来人去。
                 <Divider>社交账号</Divider>
                 <Avatar size={28} icon="github" className="account" />
                 <Avatar size={28} icon="qq" className="account" />

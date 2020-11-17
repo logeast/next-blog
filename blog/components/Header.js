@@ -1,36 +1,50 @@
 import React from 'react';
-import { Row, Col, Menu, Icon } from 'antd';
+import { Row, Col, Menu, Affix, Avatar, Space } from 'antd';
+import Icon from '@ant-design/icons';
+import SafeArea from './SafeArea';
+import Link from 'next/link';
 
 export default function () {
     return (
-        <section className="header">
-            <Row type="flex" justify="center">
-                <Col xs={24} sm={24} md={10} lg={15} xl={12}>
-                    <span className="header-logo">Next Blog</span>
-                    <span className="header-txt">Next Blog System.</span>
-                </Col>
+        <Affix offsetTop="0">
+            <section className="header">
+                <SafeArea>
+                    <Row type="flex" align="middle" justify="space-between">
+                        <Col className="header-left" span={8}>
+                            <a href="/">
+                                <Space align="center">
+                                    <Avatar
+                                        shape="square"
+                                        size="large"
+                                        icon={<img src="logo.png"></img>}
+                                    />
+                                    <span className="header-logo">
+                                        Next Blog
+                                    </span>
+                                </Space>
+                            </a>
+                            {/* <span className="header-txt">私房，亦作四方。</span> */}
+                        </Col>
 
-                <Col className="memu-div" xs={0} sm={0} md={14} lg={8} xl={6}>
-                    <Menu mode="horizontal">
-                        <Menu.Item key="home">
-                            <Icon type="home" />
-                            HOME
-                        </Menu.Item>
-                        <Menu.Item key="blog">
-                            <Icon type="smile" />
-                            BLOGS
-                        </Menu.Item>
-                        <Menu.Item key="about">
-                            <Icon type="youtube" />
-                            ABOUT
-                        </Menu.Item>
-                        <Menu.Item key="contact">
-                            <Icon type="smile" />
-                            CONTACT
-                        </Menu.Item>
-                    </Menu>
-                </Col>
-            </Row>
-        </section>
+                        <Col className="header-right" span={12} flex="flex-end">
+                            <Menu mode="horizontal" defaultActiveFirst>
+                                <Menu.Item key="home">
+                                    <Link href="/">主页</Link>
+                                </Menu.Item>
+                                <Menu.Item key="blog">
+                                    <Link href="/blog">博客</Link>
+                                </Menu.Item>
+                                <Menu.Item key="about">
+                                    <Link href="/about">关于</Link>
+                                </Menu.Item>
+                                <Menu.Item key="contact">
+                                    <Link href="/contact">联系</Link>
+                                </Menu.Item>
+                            </Menu>
+                        </Col>
+                    </Row>
+                </SafeArea>
+            </section>
+        </Affix>
     );
 }
