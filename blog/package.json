@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next -p 8888"
   },
   "dependencies": {
     "antd": "^4.8.0",

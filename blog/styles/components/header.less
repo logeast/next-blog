@@ -3,6 +3,9 @@
     height: var(--header-height);
     background-color: #fff;
     box-shadow: @box-shadow-base;
+    .header-right {
+        .flex-end();
+    }
     .ant-row {
         height: 100%;
     }
@@ -17,8 +20,6 @@
         padding-left: 8px;
     }
     .ant-menu {
-        display: flex;
-        justify-content: flex-end;
         line-height: var(--header-height);
         border-bottom-width: 0;
     }

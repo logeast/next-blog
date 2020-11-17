@@ -1,16 +1,15 @@
-import React from 'react';
-import { Row, Col, Menu, Affix, Avatar, Space } from 'antd';
-import Icon from '@ant-design/icons';
-import SafeArea from './SafeArea';
-import Link from 'next/link';
+import React from "react";
+import { Row, Col, Menu, Affix, Avatar, Space, Button } from "antd";
+import SafeArea from "./SafeArea";
+import Link from "next/link";
 
-export default function () {
+function Header() {
     return (
         <Affix offsetTop="0">
             <section className="header">
                 <SafeArea>
                     <Row type="flex" align="middle" justify="space-between">
-                        <Col className="header-left" span={8}>
+                        <Col className="header-left" span={3}>
                             <a href="/">
                                 <Space align="center">
                                     <Avatar
@@ -23,10 +22,9 @@ export default function () {
                                     </span>
                                 </Space>
                             </a>
-                            {/* <span className="header-txt">私房，亦作四方。</span> */}
                         </Col>
 
-                        <Col className="header-right" span={12} flex="flex-end">
+                        <Col className="header-center" span={8} flex="1">
                             <Menu mode="horizontal" defaultActiveFirst>
                                 <Menu.Item key="home">
                                     <Link href="/">主页</Link>
@@ -42,9 +40,22 @@ export default function () {
                                 </Menu.Item>
                             </Menu>
                         </Col>
+
+                        <Col className="header-right" span={8}>
+                            <Space size="large">
+                                <Button type="primary">写文章</Button>
+                                <Avatar
+                                    icon={
+                                        <img src="https://portrait.gitee.com/uploads/avatars/user/2682/8047784_logeast_1601777527.png"></img>
+                                    }
+                                />
+                            </Space>
+                        </Col>
                     </Row>
                 </SafeArea>
             </section>
         </Affix>
     );
 }
+
+export default Header;
