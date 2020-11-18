@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import SafeArea from '../components/SafeArea';
 import Header from '../components/Header';
 import CardList from './CardList';
+import Footer from '../components/Footer';
 
 function App() {
     return (
-        <>
-            <Header />
+        <Fragment>
             <Router>
+                <Header />
                 <Switch>
                     <Route exact path="/">
                         home
@@ -20,7 +21,8 @@ function App() {
                     <Route path="/contact">contact</Route>
                 </Switch>
             </Router>
-        </>
+            <Footer />
+        </Fragment>
     );
 }
 

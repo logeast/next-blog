@@ -11,47 +11,38 @@ function Header() {
                 <SafeArea>
                     <Row type="flex" align="middle" justify="space-between">
                         <Col className="header-left" span={3}>
-                            <Router>
-                                <Link to="/">
-                                    <Space align="center">
-                                        <Avatar
-                                            shape="square"
-                                            size="large"
-                                            icon={
-                                                <img
-                                                    src={logo}
-                                                    alt="logo"
-                                                ></img>
-                                            }
-                                        />
-                                        <span className="header-logo">
-                                            Next Blog
-                                        </span>
-                                    </Space>
-                                </Link>
-                            </Router>
+                            <Link to="/">
+                                <Space align="center">
+                                    <Avatar
+                                        shape="square"
+                                        size="large"
+                                        icon={<img src={logo} alt="logo"></img>}
+                                    />
+                                    <span className="header-logo">
+                                        Next Blog
+                                    </span>
+                                </Space>
+                            </Link>
                         </Col>
 
                         <Col className="header-center" span={8} flex="1">
-                            <Router>
-                                <Menu
-                                    mode="horizontal"
-                                    defaultSelectedKeys={['home']}
-                                >
-                                    <Menu.Item key="home">
-                                        <Link to="/">主页</Link>
-                                    </Menu.Item>
-                                    <Menu.Item key="blog">
-                                        <Link to="/blog">博客</Link>
-                                    </Menu.Item>
-                                    <Menu.Item key="about">
-                                        <Link to="/about">关于</Link>
-                                    </Menu.Item>
-                                    <Menu.Item key="contact">
-                                        <Link to="/contact">联系</Link>
-                                    </Menu.Item>
-                                </Menu>
-                            </Router>
+                            <Menu
+                                mode="horizontal"
+                                defaultSelectedKeys={['home']}
+                            >
+                                <Menu.Item key="home">
+                                    <Link to="/">主页</Link>
+                                </Menu.Item>
+                                <Menu.Item key="blog">
+                                    <Link to="/blog">博客</Link>
+                                </Menu.Item>
+                                <Menu.Item key="about">
+                                    <Link to="/about">关于</Link>
+                                </Menu.Item>
+                                <Menu.Item key="contact">
+                                    <Link to="/contact">联系</Link>
+                                </Menu.Item>
+                            </Menu>
                         </Col>
 
                         <Col className="header-right" span={8}>

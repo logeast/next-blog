@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Row, Col, Menu, Affix, Avatar, Space, Button } from 'antd';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import SafeArea from '../components/SafeArea';
-const { Meta } = Card;
+import CardGroup from '../components/CardGroup';
 
 function TagsMenu(props) {
     const tags = [
@@ -59,26 +59,10 @@ function CardList(props) {
     const { data = [1, 2, 3] } = props;
 
     return (
-        <div>
+        <SafeArea>
             <TagsMenu />
-            {data.map((item, index) => (
-                <Card
-                    hoverable
-                    style={{ width: 240 }}
-                    cover={
-                        <img
-                            alt="example"
-                            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                        />
-                    }
-                >
-                    <Meta
-                        title="Europe Street beat"
-                        description="www.instagram.com"
-                    />
-                </Card>
-            ))}
-        </div>
+            <CardGroup />
+        </SafeArea>
     );
 }
 

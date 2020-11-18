@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AddArticle from './AddArticle';
 import ArticleList from './ArticleList';
 
@@ -71,27 +71,23 @@ function AdminIndex(props) {
                         }}
                     >
                         <div>
-                            {/* <Route
-                                path="/index/"
-                                exact
-                                component={AddArticle}
-                            />
-                            <Route
-                                path="/index/add/"
-                                exact
-                                component={AddArticle}
-                            />
-                            <Route
-                                path="/index/add/:id/"
-                                exact
-                                component={AddArticle}
-                            />
-                             */}
-                            <Route
-                                path="/index"
-                                exact
-                                component={ArticleList}
-                            />
+                            <Switch>
+                                <Route
+                                    path="/index/"
+                                    exact
+                                    component={AddArticle}
+                                />
+                                <Route
+                                    path="/index/add/"
+                                    exact
+                                    component={AddArticle}
+                                />
+                                <Route
+                                    path="/index/add/:id/"
+                                    exact
+                                    component={AddArticle}
+                                />
+                            </Switch>
                         </div>
                     </div>
                 </Content>
