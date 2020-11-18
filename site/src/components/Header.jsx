@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Menu, Affix, Avatar, Space, Button } from 'antd';
 import SafeArea from './SafeArea';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import logo from '../images/logo.png';
 
 function Header() {
     return (
@@ -18,7 +19,7 @@ function Header() {
                                             size="large"
                                             icon={
                                                 <img
-                                                    src="../../public/logo.png"
+                                                    src={logo}
                                                     alt="logo"
                                                 ></img>
                                             }
@@ -32,11 +33,11 @@ function Header() {
                         </Col>
 
                         <Col className="header-center" span={8} flex="1">
-                            <Menu
-                                mode="horizontal"
-                                defaultSelectedKeys={['home']}
-                            >
-                                <Router>
+                            <Router>
+                                <Menu
+                                    mode="horizontal"
+                                    defaultSelectedKeys={['home']}
+                                >
                                     <Menu.Item key="home">
                                         <Link to="/">主页</Link>
                                     </Menu.Item>
@@ -49,8 +50,8 @@ function Header() {
                                     <Menu.Item key="contact">
                                         <Link to="/contact">联系</Link>
                                     </Menu.Item>
-                                </Router>
-                            </Menu>
+                                </Menu>
+                            </Router>
                         </Col>
 
                         <Col className="header-right" span={8}>
