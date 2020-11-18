@@ -1,7 +1,5 @@
 import React from 'react';
-import { Card, Row, Col, Menu, Affix, Avatar, Space, Button } from 'antd';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import SafeArea from '../components/SafeArea';
+import { Card, Row, Col } from 'antd';
 import _ from 'lodash';
 
 const { Meta } = Card;

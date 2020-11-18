@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import SafeArea from '../components/SafeArea';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../components/Header';
-import CardList from './CardList';
 import Footer from '../components/Footer';
+
+import CardList from './CardList';
 
 function App() {
     return (
@@ -14,7 +14,7 @@ function App() {
                     <Route exact path="/">
                         home
                     </Route>
-                    <Route exact path="/blog">
+                    <Route path="/blog">
                         <CardList />
                     </Route>
                     <Route path="/about">about</Route>
