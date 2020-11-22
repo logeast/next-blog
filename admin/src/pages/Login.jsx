@@ -52,7 +52,7 @@ function Login(props) {
         <div className="login-div">
             <Spin tip="Loading..." spinning={isLoading}>
                 <Card
-                    title="JSPang Blog  System"
+                    title="妙笔后台管理系统"
                     bordered={true}
                     style={{ width: 400 }}
                 >

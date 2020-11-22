@@ -5,7 +5,7 @@ import TagsMenu from '../components/TagsMenu';
 import CardGroup from '../components/CardGroup';
 
 function CardList(props) {
-    const { path } = useRouteMatch();
+    const { path, url } = useRouteMatch();
 
     return (
         <SafeArea>
@@ -13,9 +13,16 @@ function CardList(props) {
             <Switch>
                 <Route exact path={path}>
                     <CardGroup />
+                    <Switch>
+                        <Route path="blog/:id">detail</Route>
+                        <Route path="*">404</Route>
+                    </Switch>
                 </Route>
                 <Route exact path={`${path}/popular`}>
-                    xx
+                    <CardGroup />
+                    <Switch>
+                        <Route path="blog/:id">detail</Route>
+                    </Switch>
                 </Route>
                 <Route exact path={`${path}/art`}>
                     art

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, Row, Col } from 'antd';
+import { Card, Row, Col, Space } from 'antd';
+import Link from 'next/link';
 import _ from 'lodash';
-import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
 
 const { Meta } = Card;
 
@@ -67,7 +67,6 @@ const mockData = [
 function CardGroup(props) {
     const { data = mockData } = props;
     const chunkData = _.chunk(data, 3);
-    const { path } = useRouteMatch();
 
     return (
         <section className="card-group">
@@ -76,19 +75,33 @@ function CardGroup(props) {
                     <Row gutter={[24, 24]} key={index}>
                         {item.map((subitem, index) => (
                             <Col span={8} key={subitem.id}>
-                                <Link to={`${path}/${subitem.id}`}>
+                                <Link
+                                    href={{
+                                        pathname: 'detail',
+                                        query: { id: subitem.id },
+                                    }}
+                                >
                                     <Card
                                         hoverable
                                         cover={
                                             <img
                                                 alt={subitem?.title}
-                                                src={subitem?.img}
+                                                src={subitem?.thumb}
                                             />
                                         }
                                     >
                                         <Meta
-                                            title={subitem?.type}
-                                            description={subitem?.title}
+                                            title={subitem?.title}
+                                            description={
+                                                <Space>
+                                                    <span>
+                                                        {subitem?.type_name}
+                                                    </span>
+                                                    <span>
+                                                        {subitem?.add_time}
+                                                    </span>
+                                                </Space>
+                                            }
                                         />
                                     </Card>
                                 </Link>

@@ -1,7 +1,7 @@
-import React from "react";
-import { Row, Col, Menu, Affix, Avatar, Space, Button } from "antd";
-import SafeArea from "./SafeArea";
-import Link from "next/link";
+import React from 'react';
+import { Row, Col, Menu, Affix, Avatar, Space, Button } from 'antd';
+import SafeArea from './SafeArea';
+import Link from 'next/link';
 
 function Header() {
     return (
@@ -17,9 +17,8 @@ function Header() {
                                         size="large"
                                         icon={<img src="logo.png"></img>}
                                     />
-                                    <span className="header-logo">
-                                        Next Blog
-                                    </span>
+                                    {/* <span className="header-logo">MiaoBi</span> */}
+                                    <span className="header-logo">妙笔</span>
                                 </Space>
                             </a>
                         </Col>

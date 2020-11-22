@@ -14,4 +14,5 @@ module.exports = (app) => {
         '/default/getArticleById/:id',
         controller.default.home.getArticleById,
     );
+    router.get('/default/getTypeInfo', controller.default.home.getTypeInfo);
 };

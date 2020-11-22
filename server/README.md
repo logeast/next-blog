@@ -1,7 +1,5 @@
 # server
 
-
-
 ## QuickStart
 
 <!-- add docs here for user -->
@@ -25,9 +23,15 @@ $ npm stop
 
 ### npm scripts
 
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
-
+-   Use `npm run lint` to check code style.
+-   Use `npm test` to run unit test.
+-   Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
 
 [egg]: https://eggjs.org
+
+## API 生成
+
+访问 `http://localhost:7001/swagger-ui.html` 页面。
+
+生成规则参考
+https://github.com/Yanshijie-EL/egg-swagger-doc
