@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import CardList from './CardList';
+import ArticleList from './ArticleList';
 
 function App() {
     return (
@@ -15,7 +15,7 @@ function App() {
                         home
                     </Route>
                     <Route path="/blog">
-                        <CardList />
+                        <ArticleList />
                     </Route>
                     <Route path="/about">about</Route>
                     <Route path="/contact">contact</Route>

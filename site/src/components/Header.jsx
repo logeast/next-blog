@@ -18,9 +18,7 @@ function Header() {
                                         size="large"
                                         icon={<img src={logo} alt="logo"></img>}
                                     />
-                                    <span className="header-logo">
-                                        Next Blog
-                                    </span>
+                                    <span className="header-logo">Notar</span>
                                 </Space>
                             </Link>
                         </Col>
