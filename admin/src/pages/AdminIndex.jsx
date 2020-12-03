@@ -87,11 +87,16 @@ function AdminIndex(props) {
                                     exact
                                     component={AddArticle}
                                 />
+                                <Route
+                                    path="/index/list/"
+                                    exact
+                                    component={ArticleList}
+                                />
                             </Switch>
                         </div>
                     </div>
                 </Content>
-                <Footer style={{ textAlign: 'center' }}>JSPang.com</Footer>
+                <Footer style={{ textAlign: 'center' }}>一片月明如水</Footer>
             </Layout>
         </Layout>
     );
